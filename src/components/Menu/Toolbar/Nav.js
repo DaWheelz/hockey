@@ -72,9 +72,11 @@ class Nav extends Component {
                     </ul>
                     <div className="navbar_menu_items">
                         <a href="/clubs" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
+                            Clubs
                         </a>
                         {/* eslint-disable-next-line */}
                         <a href="/scores" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
+                            Uitslagen
                         </a>
                     </div>
                     <ul style={{ listStyleType: 'none', marginLeft: '-55px', marginBottom: '0px' }}>
