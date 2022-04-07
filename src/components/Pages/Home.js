@@ -68,7 +68,7 @@ class Home extends Component {
 
     const eventItems = this.state.gamedays.map((day, id) => {
       let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
-      let locationurl = "httpss://maps.google.com/?q=" + day.address + ", " + day.city
+      let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
       let address = ""
       let city = ""
 
