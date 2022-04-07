@@ -69,43 +69,12 @@ class Nav extends Component {
                         <li className="nav-item active" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#fffff', marginLeft: '10px' }} to="/">Home</Link>
                         </li>
-                        {this.state.role === 'referee' || this.state.role === 'admin' ?
-                            <li className="nav-item" onClick={this.toggleNavbar}>
-                                <Link className="nav-link" style={{ color: '#ffffff', marginLeft: '10px' }} to="/referee">Scheidsrechter</Link>
-                            </li>
-                            :
-                            null}
-
                     </ul>
                     <div className="navbar_menu_items">
-                        <a href="/" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
-                            {/* eslint-disable-next-line */}
-                            <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" >
-                                Clubs
-                                </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/clubs">Overzicht</a>
-                                {this.state.role === 'referee' || this.state.role === 'admin' ?
-                                    <a class="dropdown-item" href="/addclubs">Club toevoegen</a>
-                                    :
-                                    null
-                                }
-
-                            </div>
+                        <a href="/clubs" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
                         </a>
                         {/* eslint-disable-next-line */}
-                        <a href="" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
-                            {/* eslint-disable-next-line */}
-                            <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" >
-                                Wedstrijden
-                                </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/scores">Overzicht</a>
-                                {this.state.role === 'referee' || this.state.role === 'admin' ?
-                                    <a class="dropdown-item" href="/addmatch">Wedstrijd toevoegen</a>
-                                    :
-                                    null}
-                            </div>
+                        <a href="/scores" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
                         </a>
                     </div>
                     <ul style={{ listStyleType: 'none', marginLeft: '-55px', marginBottom: '0px' }}>
@@ -118,36 +87,6 @@ class Nav extends Component {
                             <Link className="nav-link" style={{ color: '#ffffff', marginLeft: '10px' }} to="/contact">Contact</Link>
                         </li>
                     </ul>
-                    <div className="navbar_menu_items">
-                        {this.state.loggedIn ?
-                            /* eslint-disable-next-line */
-                            <a href="" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
-                                {/* eslint-disable-next-line */}
-                                <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" >
-                                    Ingelogd als: {this.state.user.username}
-                                </a>
-                                {this.state.role === 'admin'
-                                    ?
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a href="/profile" class="dropdown-item">Profiel</a>
-                                        <a href="/users" class="dropdown-item">Gebruikers</a>
-                                        <a href="/" class="dropdown-item" onClick={this.signOut}>Logout</a>
-                                    </div>
-                                    : null}
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a href="/profile" class="dropdown-item">Profiel</a>
-                                    <a href="/" class="dropdown-item" onClick={this.signOut}>Logout</a>
-                                </div>
-                            </a>
-                            :
-                            <Link to="/login">
-                                <span class="navbar-text" style={{ color: '#ffffff', marginLeft: '10px' }}>
-                                    Login
-                                    </span>
-                            </Link>
-                        }
-                    </div>
                 </div>
             </nav>
         );
