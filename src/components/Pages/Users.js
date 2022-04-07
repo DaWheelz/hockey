@@ -31,7 +31,7 @@ class Users extends Component {
     };
 
     getUsers() {
-        axios.get(`http://hockey.mutsaers.nu:5000/users/`).then(response => {
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com//users/`).then(response => {
             this.setState({ users: response.data });
         });
     }
@@ -48,7 +48,7 @@ class Users extends Component {
                         <button onClick={onClose}>No</button>
                         <button
                             onClick={() => {
-                                axios.delete(`http://hockey.mutsaers.nu:5000/users/delete/${userid}`).then(response => {
+                                axios.delete(`https://rolstoelhockey-backend.herokuapp.com//users/delete/${userid}`).then(response => {
                                     window.location.reload(true);
                                 })
                                 onClose();

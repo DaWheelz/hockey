@@ -17,7 +17,7 @@ class Login extends Component {
     }
 
     Login(e) {
-        const LOGIN_URL = "http://hockey.mutsaers.nu:5000/auth/login/";
+        const LOGIN_URL = "https://rolstoelhockey-backend.herokuapp.com//auth/login/";
         //const LOGIN_URL = "//hockey.mutsaers.nu:3000/auth/login/";
         e.preventDefault();
         this.setState({ errorMessage: '' })

@@ -26,7 +26,7 @@ class Nav extends Component {
     }
 
      getUser() {
-        const API_URL = "http://hockey.mutsaers.nu:5000/";
+        const API_URL = "https://rolstoelhockey-backend.herokuapp.com//";
 
         fetch(API_URL, {
             headers: {

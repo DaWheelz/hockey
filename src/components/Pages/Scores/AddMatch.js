@@ -39,7 +39,7 @@ class AddMatch extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://hockey.mutsaers.nu:5000/clubs/team')
+        axios.get('https://rolstoelhockey-backend.herokuapp.com//clubs/team')
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -111,7 +111,7 @@ class AddMatch extends Component {
             played_at: this.state.played_at,
         }
 
-        axios.post('http://hockey.mutsaers.nu:5000/matches/add', match)
+        axios.post('https://rolstoelhockey-backend.herokuapp.com//matches/add', match)
             .then(res => this.onShowAlert());
 
     }

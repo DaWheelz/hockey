@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default class API {
     getData = () => {
-        return axios.get('http://hockey.mutsaers.nu:5000/gamedays')
+        return axios.get('https://rolstoelhockey-backend.herokuapp.com//gamedays')
             .then(response => {
                 console.log("res: " + response.data[0].title)
                 if (response.data.length > 0) {

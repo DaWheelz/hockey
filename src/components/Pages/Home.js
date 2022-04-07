@@ -38,14 +38,14 @@ class Home extends Component {
   }
 
   getMatches() {
-    axios.get(`http://hockey.mutsaers.nu:5000/matches/findlatest/H`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com//matches/findlatest/H`).then(response => {
       console.log(response);
       this.setState({ matches: response.data });
     });
   }
 
   getUpcoming() {
-    axios.get(`http://hockey.mutsaers.nu:5000/gamedays/upcoming/H`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com//gamedays/upcoming/H`).then(response => {
       this.setState({ gamedays: response.data });
     });
   }

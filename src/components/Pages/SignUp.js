@@ -24,7 +24,7 @@ class SignUp extends Component {
     };
 
     SignUp(e) {
-        const SIGNUP_URL = "http://hockey.mutsaers.nu:5000/auth/signup";
+        const SIGNUP_URL = "https://rolstoelhockey-backend.herokuapp.com//auth/signup";
         e.preventDefault();
         this.setState({ errorMessage: '' })
         if (this.validUser()) {

@@ -31,12 +31,12 @@ class Match extends Component {
 
   getMatches(gamedayid) {
     console.log(gamedayid);
-    axios.get(`http://hockey.mutsaers.nu:5000/matches/find/` + gamedayid).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com//matches/find/` + gamedayid).then(response => {
       this.setState({ matches: response.data });
     });
   }
   getGameDays() {
-    fetch("http://hockey.mutsaers.nu:5000/gamedays/upcoming/H").then(response => {
+    fetch("https://rolstoelhockey-backend.herokuapp.com//gamedays/upcoming/H").then(response => {
       return response.json();
     })
       .then(data => {

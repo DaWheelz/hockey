@@ -27,7 +27,7 @@ class EditMatch extends Component {
     componentWillMount() {
         const userid = urlParams.get('userid')
 
-        axios.get('http://hockey.mutsaers.nu:5000/users/update/' + userid)
+        axios.get('https://rolstoelhockey-backend.herokuapp.com//users/update/' + userid)
             .then(response => {
                 this.setState({
                     username: response.data.username,

@@ -61,7 +61,7 @@ class AddClub extends Component {
 
         console.log(match);
 
-        axios.post('http://hockey.mutsaers.nu:5000/clubs/add', match)
+        axios.post('https://rolstoelhockey-backend.herokuapp.com//clubs/add', match)
             .then(res => this.onShowAlert());
     }
 
