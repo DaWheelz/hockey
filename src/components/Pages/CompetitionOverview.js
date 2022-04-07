@@ -36,7 +36,7 @@ class Settings extends Component {
     }
 
     getTeams(compid) {
-        axios.get(`https://rolstoelhockey-backend.herokuapp.com//clubs/team/` + compid).then(response => {
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/` + compid).then(response => {
             this.setState({ teams: response.data });
             console.log('res: ' + this.state.teams)
         });

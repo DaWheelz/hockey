@@ -35,7 +35,7 @@ class EditMatch extends Component {
         const matchid = urlParams.get('matchid')
         console.log('gameid: ' + matchid);
 
-        axios.get('http://192.168.1.73:3000/matches/update/' + matchid)
+        axios.get('https://rolstoelhockey-backend.herokuapp.com/matches/update/' + matchid)
             .then(response => {
                 this.setState({
                     teamA: response.data.teamA,
@@ -74,7 +74,7 @@ class EditMatch extends Component {
             scoreB: this.state.scoreB,
             teamB: this.state.teamB,
         }
-        fetch(`http://192.168.1.73:3000/matches/update/${matchid}`, {
+        fetch(`https://rolstoelhockey-backend.herokuapp.com/matches/update/${matchid}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
