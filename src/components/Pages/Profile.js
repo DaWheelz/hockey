@@ -50,7 +50,7 @@ class Profile extends Component {
     }
 
     getTeams() {
-        fetch(`https://rolstoelhockey-backend.herokuapp.com//clubs/team/`).then(response => {
+        fetch(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/`).then(response => {
             return response.json()
         }).then(data => {
             const teamsFromApi = data.map(team => {
@@ -69,7 +69,7 @@ class Profile extends Component {
 
     getUsers() {
 
-        const API_URL = "https://rolstoelhockey-backend.herokuapp.com//s";
+        const API_URL = "https://rolstoelhockey-backend.herokuapp.com/s";
 
         fetch(API_URL, {
             headers: {
@@ -81,7 +81,7 @@ class Profile extends Component {
             .then(result => {
                 if (result.user) {
                     this.setState({ id: result.user._id })
-                    axios.get(`https://rolstoelhockey-backend.herokuapp.com//users/${result.user._id}`).then(response => {
+                    axios.get(`https://rolstoelhockey-backend.herokuapp.com/users/${result.user._id}`).then(response => {
                         this.setState({
                             username: response.data.username,
                             email: response.data.email,
@@ -144,7 +144,7 @@ class Profile extends Component {
             followedteamid: this.state.followedTeamId
         }
 
-        fetch(`https://rolstoelhockey-backend.herokuapp.com//users/updateprofile/${this.state.id}`, {
+        fetch(`https://rolstoelhockey-backend.herokuapp.com/users/updateprofile/${this.state.id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

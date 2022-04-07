@@ -21,7 +21,7 @@ class Club extends Component {
     }
 
     getClubs() {
-        axios.get('https://rolstoelhockey-backend.herokuapp.com//clubs/H')
+        axios.get('https://rolstoelhockey-backend.herokuapp.com/clubs/H')
             .then(response => 
                 this.setState({ clubs: response.data }));
     }

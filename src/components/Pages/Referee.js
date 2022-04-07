@@ -70,7 +70,7 @@ class Referee extends Component {
     }
 
     getMatches() {
-        axios.get(`https://rolstoelhockey-backend.herokuapp.com//matches/findlatest/H`).then(response => {
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H`).then(response => {
             this.setState({ matches: response.data });
             this.setState({ matches: [{ teamA: 'Selecteer een wedstrijd' }, ...this.state.matches] });
         });
@@ -78,7 +78,7 @@ class Referee extends Component {
     }
 
     getSelectedMatch(matchid) {
-        axios.get(`https://rolstoelhockey-backend.herokuapp.com//matches/findmatch/` + matchid).then(response => {
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findmatch/` + matchid).then(response => {
             console.log(response.data);
             this.setState({
                 teamA: response.data[0].teamA,
@@ -117,7 +117,7 @@ class Referee extends Component {
             scoreB: this.state.scoreB,
             teamB: this.state.teamB,
         }
-        fetch(`https://rolstoelhockey-backend.herokuapp.com//matches/update/${this.state.selectedGame}`, {
+        fetch(`https://rolstoelhockey-backend.herokuapp.com/matches/update/${this.state.selectedGame}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

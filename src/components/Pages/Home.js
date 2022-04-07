@@ -19,33 +19,20 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    this.test();
     this.getMatches();
     this.getUpcoming();
     this.setState({ role: localStorage.getItem('role') })
   };
 
-  test() {
-    axios.get('http://postman-echo.com/get?foo1=bar1&foo2=bar2',
-      {
-        headers: { 
-          'Access-Control-Allow-Origin': '*'
-        }
-      }
-    ).then(response => {
-      console.log(response);
-    })
-  }
-
   getMatches() {
-    axios.get(`https://rolstoelhockey-backend.herokuapp.com//matches/findlatest/H`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H`).then(response => {
       console.log(response);
       this.setState({ matches: response.data });
     });
   }
 
   getUpcoming() {
-    axios.get(`https://rolstoelhockey-backend.herokuapp.com//gamedays/upcoming/H`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/gamedays/upcoming/H`).then(response => {
       this.setState({ gamedays: response.data });
     });
   }
