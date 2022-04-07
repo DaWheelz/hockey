@@ -1,0 +1,138 @@
+.gridstyle {
+    margin-top: 4rem;
+}
+
+.blockstyle {
+    width: 100%;
+    min-height: 500px;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.rowstyle {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.MuiSwitch-colorPrimary{
+  color: #ef790c
+}
+
+@media (min-width: 992px) {
+    .pageblock {
+        margin: 20px 20px 20px 20px;
+    }
+    .home-div1 {
+        display: flex;
+    }
+    .googlemaps-icon{
+        margin-right: 4%;
+        margin-top: 10%;
+        width: 50%;
+
+    }
+    .event-mid{
+        display: flex;
+    }
+    .event {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0px 10px 0px;
+        border-radius: 10px;
+    }
+    .home-events{
+        margin-left: 20px;
+    }
+    .navbar_menu_items{
+        display: flex;
+        flex-direction: row;
+    }
+    .home-matches{
+        width: 50%;
+    }
+    .profile_pageblock{
+        border: 1px solid rgb(218, 218, 218);
+        padding: 20px;
+        background-color: white;
+        border-radius: 0.1875rem;
+        box-shadow: rgba(39, 39, 39, 0.1) 0px 1px 15px 1px;
+        margin: auto;
+        margin-top: 20px;
+        justify-content: center;
+        display: flex;
+        max-width: 65%
+    }
+    .profile_information {
+        width: 50%;
+    }
+    .profile_pic_subscribe{
+        width: 50%;
+    justify-content: center;
+    display: flex;
+    height: fit-content;
+    margin: auto;
+    }
+}
+
+/* mobile */
+@media (max-width: 991px) {
+    .event {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0px 10px 0px;
+        border-radius: 10px;
+    }
+    .home-events{
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .googlemaps-icon{
+        margin-top: 10px;
+        margin-left: 5px;
+        width: 10%;
+    }
+    .navbar_menu_items{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar_items a{
+        font-size: xx-large;
+        color: white;
+    }
+    .navbar_subitems{
+        font-size: large;
+    }
+    .pageblock {
+        margin: 20px 20px 20px 20px;
+    }
+    .gridstyle {
+        flex-direction: column;
+    }
+    .blockstyle {
+        margin: 0px;
+        min-height: 500px;
+        border-radius: 25px;
+        background-color: rgb(190, 190, 190);
+        margin-bottom: 5px;
+    }
+    .profile_pageblock{
+        border: 1px solid rgb(218, 218, 218);
+        padding: 20px;
+        background-color: white;
+        border-radius: 0.1875rem;
+        box-shadow: rgba(39, 39, 39, 0.1) 0px 1px 15px 1px;
+        margin: 20px;
+        justify-content: center;
+    }
+    .profile_information {
+        width: 100%;
+    }
+    .profile_pic_subscribe{
+        width: 50%;
+    justify-content: center;
+    display: flex;
+    height: fit-content;
+    margin: auto;
+    }
+    
+}

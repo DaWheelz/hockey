@@ -1,0 +1,8 @@
+{
+  "short_name": "Rolstoelhockey",
+  "name": "Rolstoelhockey",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ef790c",
+  "background_color": "#ef790c"
+}

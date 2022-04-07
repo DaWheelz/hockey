@@ -1,0 +1,25 @@
+
+@media (max-width: 768px){
+    .toolbar__logo {
+        margin-left: 1%;
+        width: 68%;
+    }
+    .toolbar_login {
+        margin-left: 2%;
+        width: 6%;
+    }
+    a {
+        width: 40%;
+    }
+}
+
+@media (min-width: 769px){
+    .toolbar__logo {
+        margin-left: 1%;
+        width: 35%;
+    }
+    .toolbar_login {
+        margin-left: 2%;
+        width: 6%;
+    }
+}

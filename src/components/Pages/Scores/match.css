@@ -1,0 +1,115 @@
+
+.match-group{
+    padding: 10px;
+    display: flex;
+    margin: 10px 00px 10px 0px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: rgb(46, 46, 46);
+    border-bottom: 1px solid grey;
+}
+.clubheader{
+    display: flex;
+}
+.clubnameheader{
+    margin-left:10%;
+    font-weight: 100;
+}
+.clubaddressheader{
+    margin-left: 17%;
+    font-weight: 100;
+}
+.match-time{
+    font-size: small;
+    width: 20%;
+}
+.match-teama{
+    font-size: small;
+    width: 30%;
+}
+.match-teamb{
+    font-size: small;
+    width: 30%;
+}
+.match-score{
+    font-size: 17;
+    width: 20%;
+    text-align: center;
+    color: #ff7b00;
+}
+
+@media only screen and (min-width: 600px){
+    .link{
+        float: right;
+        font-weight: 100;
+    }
+    .clubnameinfo{
+        width: 30%;
+        font-weight: 100;
+    }
+    .clubaddressinfo{
+        width:40%;
+        font-weight: 100;
+    }
+    .search-bar{
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .link{
+        margin-left: 30%;
+        font-weight: 100;
+    }
+    .clubnameinfo{
+        width: 30%;
+        font-weight: 100;
+    }
+    .clubaddressinfo{
+        width:40%;
+        font-weight: 100;
+    }
+    .search-bar{
+        display: block;
+    }
+}
+
+.box-score{
+    width: 20%;
+    text-align: center;
+}
+
+.custom-select {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+    font-size: 18px;
+    color: #60666d;
+    border-color: #fafafa;
+    box-shadow: rgba(39, 39, 39, 0.1) 0px 1px 4px 1px;
+    user-select: none;
+    -moz-appearance: none;
+    width: 100%;
+}
+
+select:active, select:hover {
+  outline: none
+}
+
+.search-button{
+    border-radius: 12px;
+    margin-left: 12px;
+    border: none;
+    color: white;
+    width: 38px;
+    height: 38px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    font-size: small;
+}
+a:hover {
+    color: white;
+    }
