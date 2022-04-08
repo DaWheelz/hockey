@@ -39,23 +39,10 @@ class Home extends Component {
 
   render() {
     const matchItems = this.state.matches.map((match, _id) => {
-      if (this.state.role === 'referee' || this.state.role === 'admin') {
-        return (
-          <a href={`/editmatch/?matchid=${match._id}`} style={{}}>
-            <div className="match-group">
-              <div className="match-time">{match.played_at}</div>
-              <div className="match-teama">{match.teamA}</div>
-              <div className="match-score">{match.scoreA}</div>
-              <div> - </div>
-              <div className="match-score">{match.scoreB}</div>
-              <div className="match-teamb">{match.teamB}</div>
-            </div>
-          </a>
-        );
-      } else {
         return (
           <div className="match-group">
             <div className="match-time">{match.played_at}</div>
+            <div className="match-time">{match.gameday_info.gamedate}.to('nl-NL')</div>
             <div className="match-teama">{match.teamA}</div>
             <div className="match-score">{match.scoreA}</div>
             <div className="match-score"> - </div>
@@ -64,7 +51,7 @@ class Home extends Component {
           </div>
         );
       }
-    });
+    );
 
     const eventItems = this.state.gamedays.map((day, id) => {
       let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
