@@ -27,7 +27,8 @@ class Settings extends Component {
         super();
 
         this.state = {
-            teams: [],
+            teamsH: [],
+            teamsE: [],
             validationError: "",
             loggedIn: false,
             selectChanged: false,
@@ -35,17 +36,26 @@ class Settings extends Component {
         };
     }
 
-    getTeams(compid) {
-        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/` + compid).then(response => {
-            this.setState({ teams: response.data });
-            console.log('res: ' + this.state.teams)
+    getTeamsH(compid) {
+        this.state.compId = compid;
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/` + compid + "/H").then(response => {
+            this.setState({ teamsH: response.data });
+        });
+    }
+
+    getTeamsE(compid) {
+        this.state.compId = compid;
+        console.log(compid);
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/` + compid + "/E").then(response => {
+            this.setState({ teamsE: response.data });
         });
     }
     render() {
         return (
-            <div className="pageblock" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+            <div>
+                
                 <div style={{ display: 'flex' }}>
-                    <select className='custom-select' value={this.state.compId} onChange={(e) => { this.setState({ compId: e.target.value, selectChanged: true }); }}>
+                    <select className='custom-select' value={this.state.compId} onChange={(e) => { this.getTeamsH(e.target.value); this.getTeamsE(e.target.value); }}>
                         {compDivision.map(comp => (
                             <option
                                 key={comp.id}
@@ -54,11 +64,9 @@ class Settings extends Component {
                             </option>
                         ))}
                     </select>
-                    {this.state.selectChanged
-                        ?
-                        <button type="submit" style={{ backgroundColor: bgColors["Button-Color"], color: 'white' }} class="fa fa-search search-button" onClick={() => { this.getTeams(this.state.compId); }}></button>
-                        : null}
                 </div>
+                <div className="pageblock" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+                <a>H-Hockey</a>
                 <TableContainer>
                     <Table aria-label="simple table">
                         <TableHead>
@@ -75,7 +83,7 @@ class Settings extends Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {this.state.teams.map(team => (
+                            {this.state.teamsH.map(team => (
                                 <TableRow key={team._id} style={{ height: '20px' }}>
                                     <TableCell component="th" scope="row" padding="none" align="center">{team.teamname}</TableCell>
                                     <TableCell component="th" scope="row" padding="none" align="center">{team.GS}</TableCell>
@@ -92,6 +100,42 @@ class Settings extends Component {
                     </Table>
                 </TableContainer>
             </div >
+            <div className="pageblock" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+            <a>E-Hockey</a>
+            <TableContainer>
+                <Table aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">Naam</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">GS</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">GW</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">GL</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">VL</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">PT</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">V</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">T</TableCell>
+                            <TableCell style={{ fontWeight: 'bold' }} align="center">DS</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {this.state.teamsE.map(team => (
+                            <TableRow key={team._id} style={{ height: '20px' }}>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.teamname}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.GS}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.GW}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.GL}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.VL}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.PT}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.V}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.T}</TableCell>
+                                <TableCell component="th" scope="row" padding="none" align="center">{team.DS}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div >
+        </div>
         );
     }
 }
