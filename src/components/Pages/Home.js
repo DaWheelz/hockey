@@ -153,13 +153,13 @@ class Home extends Component {
     return (
       <div className="pageblock">
         <div className="home-div1">
-          <div className="home-matches" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+          <div className="home-matches">
             <h1 style={{ fontWeight: '500', fontSize: 35, margin: 7}}>Laatste uitslagen - H</h1>
             <div>
               {matchItemsH}
             </div>
           </div>
-          <div className="home-matches" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+          <div className="home-matches">
             <h1 style={{ fontWeight: '500', fontSize: 35, margin: 7}}>Laatste uitslagen - E</h1>
             <div>
               {matchItemsE}
@@ -167,13 +167,13 @@ class Home extends Component {
           </div>
         </div>
         <div className="home-div1">
-        <div className="home-events" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)', height: '100%' }}>
+        <div className="home-events">
             <h1 style={{ color: textColor, fontWeight: '100' }}>Competitedagen - H</h1>
             <div>
               {eventItemsH}
             </div>
           </div>
-          <div className="home-events" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)', height: '100%' }}>
+          <div className="home-events">
             <h1 style={{ color: textColor, fontWeight: '100' }}>Competitedagen - E</h1>
             <div>
               {eventItemsE}
