@@ -22,6 +22,12 @@
     font-size: small;
     width: 20%;
 }
+.match-date{
+    font-size: small;
+    width: 20%;
+    color:#ff7b00;
+    margin-left: 20px;
+}
 .match-teama{
     font-size: small;
     width: 30%;
@@ -53,6 +59,10 @@
     .search-bar{
         display: flex;
     }
+
+    .match-time-date {
+        display:flex;
+    }
 }
 
 @media only screen and (max-width: 600px){
@@ -70,6 +80,9 @@
     }
     .search-bar{
         display: block;
+    }
+    .match-date {
+        margin-left: 0px;
     }
 }
 
