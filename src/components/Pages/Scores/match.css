@@ -123,6 +123,17 @@ select:active, select:hover {
     appearance: none;
     font-size: small;
 }
+.button {
+    border-radius: 12px;
+    background-color: #ff7b00;
+    color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding:5px;
+}
 a:hover {
     color: white;
     }

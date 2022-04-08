@@ -112,8 +112,8 @@ class Home extends Component {
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Adres: </b><br />{address}</div>
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
-              <a href={locationurl}><img alt="" className="googlemaps-icon" src={googlemaps_ico} /></a>
+              <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
+              <a className='button' href={locationurl}>Navigeer</a>
             </div>
           </div>
         </div>
@@ -142,8 +142,8 @@ class Home extends Component {
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Adres: </b><br />{address}</div>
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
-              <a href={locationurl}><img alt="" className="googlemaps-icon" src={googlemaps_ico} /></a>
+              <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
+              <a className='button' href={locationurl}>Navigeer</a>
             </div>
           </div>
         </div>
