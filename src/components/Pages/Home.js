@@ -168,13 +168,13 @@ class Home extends Component {
         </div>
         <div className="home-div1">
         <div className="home-events">
-            <h1 style={{ color: textColor, fontWeight: '600' }}>Competitedagen - H</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Competitedagen - H</h1>
             <div>
               {eventItemsH}
             </div>
           </div>
           <div className="home-events">
-            <h1 style={{ color: textColor, fontWeight: '600' }}>Competitedagen - E</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Competitedagen - E</h1>
             <div>
               {eventItemsE}
             </div>
