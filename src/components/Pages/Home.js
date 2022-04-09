@@ -154,13 +154,13 @@ class Home extends Component {
       <div className="pageblock">
         <div className="home-div1">
           <div className="home-matches">
-            <h1 style={{ fontWeight: '500', fontSize: 35, margin: 7}}>Laatste uitslagen - H</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Laatste uitslagen - H</h1>
             <div>
               {matchItemsH}
             </div>
           </div>
           <div className="home-matches">
-            <h1 style={{ fontWeight: '500', fontSize: 35, margin: 7}}>Laatste uitslagen - E</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Laatste uitslagen - E</h1>
             <div>
               {matchItemsE}
             </div>
@@ -168,13 +168,13 @@ class Home extends Component {
         </div>
         <div className="home-div1">
         <div className="home-events">
-            <h1 style={{ color: textColor, fontWeight: '100' }}>Competitedagen - H</h1>
+            <h1 style={{ color: textColor, fontWeight: '600' }}>Competitedagen - H</h1>
             <div>
               {eventItemsH}
             </div>
           </div>
           <div className="home-events">
-            <h1 style={{ color: textColor, fontWeight: '100' }}>Competitedagen - E</h1>
+            <h1 style={{ color: textColor, fontWeight: '600' }}>Competitedagen - E</h1>
             <div>
               {eventItemsE}
             </div>

@@ -133,6 +133,7 @@ select:active, select:hover {
     -o-appearance: none;
     appearance: none;
     padding:5px;
+    height: 36px;
 }
 a:hover {
     color: white;
