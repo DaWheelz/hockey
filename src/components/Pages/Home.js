@@ -3,6 +3,7 @@ import '../admin.css';
 import axios from "axios";
 import googlemaps_ico from '../../img/google_maps.png';
 import Moment from 'moment';
+import { Bones } from "react-bones/lib";
 
 var textColor = "#4a4a4a";
 var title_event_color = "#fc941c";
@@ -18,6 +19,7 @@ class Home extends Component {
       matchesE: [],
       gamedaysH: [],
       gamedaysE: [],
+      loading: true
     };
   }
 
@@ -31,7 +33,7 @@ class Home extends Component {
   getMatchesH() {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H`).then(response => {
       console.log(response);
-      this.setState({ matchesH: response.data });
+      this.setState({ matchesH: response.data, loading: false });
     });
   }
 
@@ -155,9 +157,7 @@ class Home extends Component {
         <div className="home-div1">
           <div className="home-matches">
             <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Laatste uitslagen - H</h1>
-            <div>
-              {matchItemsH}
-            </div>
+            {matchItemsH}
           </div>
           <div className="home-matches">
             <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Laatste uitslagen - E</h1>
