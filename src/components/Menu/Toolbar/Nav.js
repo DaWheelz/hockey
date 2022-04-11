@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import rolstoelhockey_logo from '../../../img/navbar_logo_rolstoelhockey.png'
-import AdSense from 'react-adsense';
+
 
 class Nav extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class Nav extends Component {
 
     componentDidMount() {
     }
-    
+
     render() {
         const collapsed = this.state.collapsed;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
@@ -34,8 +34,6 @@ class Nav extends Component {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <div className={`${classOne}`} id="navbarResponsive">
-                <AdSense.Google
-                client='ca-pub-6534700259705406' slot='4972479679'/>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#fffff' }} to="/">Home</Link>
