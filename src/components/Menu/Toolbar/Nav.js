@@ -20,6 +20,7 @@ class Nav extends Component {
 
     componentDidMount() {
     }
+    
     render() {
         const collapsed = this.state.collapsed;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
@@ -32,9 +33,9 @@ class Nav extends Component {
                 <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
+                <div className={`${classOne}`} id="navbarResponsive">
                 <AdSense.Google
                 client='ca-pub-6534700259705406' slot='4972479679'/>
-                <div className={`${classOne}`} id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#fffff' }} to="/">Home</Link>
