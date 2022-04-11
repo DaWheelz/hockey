@@ -46,8 +46,8 @@ class Login extends Component {
                 });
             }).then((result) => {
                 console.log('res: ', result)
-                localStorage.setItem('token', result.token)
-                localStorage.setItem('role', result.role)
+                sessionStorage.setItem('token', result.token)
+                sessionStorage.setItem('role', result.role)
                 setTimeout(() => {
                     console.log('logged in...')
                     this.setState({ loggingIn: true });

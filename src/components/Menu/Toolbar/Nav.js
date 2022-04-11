@@ -12,7 +12,7 @@ class Nav extends Component {
         this.state = {
             collapsed: true,
             loggedIn: false,
-            role: localStorage.getItem('role'),
+            role: sessionStorage.getItem('role'),
         };
     }
     toggleNavbar() {
@@ -22,11 +22,11 @@ class Nav extends Component {
     }
 
     componentDidMount() {
-        //this.getUser();
+        this.getUser();
     }
 
      getUser() {
-        const API_URL = "https://rolstoelhockey-backend.herokuapp.com//";
+        const API_URL = "https://rolstoelhockey-backend.herokuapp.com/";
 
         fetch(API_URL, {
             headers: {
@@ -47,8 +47,8 @@ class Nav extends Component {
     }
 
     signOut() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('role');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('role');
         window.location.reload(true);
     }
 
