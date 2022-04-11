@@ -25,10 +25,10 @@ class AddMatch extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            teamA: 'Doing H1',
+            teamA: '',
             scoreA: 0,
             scoreB: 0,
-            teamB: 'Doing H1',
+            teamB: '',
             teams: [],
             data: [],
             gamedayid: 0,

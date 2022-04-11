@@ -19,6 +19,7 @@ class Nav extends Component {
     }
 
     componentDidMount() {
+
     }
 
     render() {
@@ -57,6 +58,11 @@ class Nav extends Component {
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/contact">Contact</Link>
+                        </li>
+                    </ul>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                        <li className="nav-item" onClick={this.toggleNavbar}>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">Login</Link>
                         </li>
                     </ul>
                 </div>
