@@ -33,8 +33,7 @@ class Nav extends Component {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <AdSense.Google
-                client='ca-pub-6534700259705406'
-                slot='7806394673'/>
+                client='ca-pub-6534700259705406'/>
                 <div className={`${classOne}`} id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active" onClick={this.toggleNavbar}>
