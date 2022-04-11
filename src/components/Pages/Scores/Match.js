@@ -26,6 +26,7 @@ class Match extends Component {
   }
   componentWillMount() {
     this.getGameDays();
+    this.getAcces();
   };
 
   getMatches(gamedayid) {
@@ -34,6 +35,11 @@ class Match extends Component {
       this.setState({ matches: response.data });
     });
   }
+
+  getAcces() {
+    this.state.role = sessionStorage.getItem('role');
+  }
+
   getGameDays() {
     fetch("https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H").then(response => {
       return response.json();
@@ -83,7 +89,7 @@ class Match extends Component {
 
   render() {
     const matchItems = this.state.matches.map((match, _id) => {
-      if (this.state.role === 'referee' || this.state.role === 'admin') {
+      if (this.state.role === 'admin') {
         return (
           <a href={`/editmatch/?matchid=${match._id}`} style={{}}>
             <div className="match-group">
