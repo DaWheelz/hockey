@@ -1,3 +1,4 @@
+import { TransferWithinAStationOutlined } from '@material-ui/icons';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import rolstoelhockey_logo from '../../../img/navbar_logo_rolstoelhockey.png'
@@ -11,6 +12,7 @@ class Nav extends Component {
             collapsed: true,
             loggedIn: false,
         };
+        this.currentUser = '';
     }
     toggleNavbar() {
         this.setState({
@@ -19,7 +21,14 @@ class Nav extends Component {
     }
 
     componentDidMount() {
+        this.checkStatus();
+    }
 
+    checkStatus(){
+        if(sessionStorage.getItem('role') === 'admin')
+        {
+            this.setState({loggedIn: true});
+        }
     }
 
     render() {
@@ -60,11 +69,20 @@ class Nav extends Component {
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/contact">Contact</Link>
                         </li>
                     </ul>
+                    {this.state.loggedIn ?
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                        <li className="nav-item" onClick={this.toggleNavbar}>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/">Welcome!</Link>
+                        </li>
+                    </ul>
+                    :
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">Login</Link>
                         </li>
                     </ul>
+                    }
+                    
                 </div>
             </nav>
         );
