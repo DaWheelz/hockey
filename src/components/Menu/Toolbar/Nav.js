@@ -67,26 +67,27 @@ class Nav extends Component {
                 <div className={`${classOne}`} id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active" onClick={this.toggleNavbar}>
-                            <Link className="nav-link" style={{ color: '#fffff', marginLeft: '10px' }} to="/">Home</Link>
+                            <Link className="nav-link" style={{ color: '#fffff' }} to="/">Home</Link>
                         </li>
                     </ul>
-                    <div className="navbar_menu_items">
-                        <a href="/clubs" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
-                            Clubs
-                        </a>
-                        {/* eslint-disable-next-line */}
-                        <a href="/scores" class="nav-item dropdown" style={{ textDecoration: 'none', margin: '10px', color: '#ffffff' }}>
-                            Uitslagen
-                        </a>
-                    </div>
-                    <ul style={{ listStyleType: 'none', marginLeft: '-55px', marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
-                            <Link className="nav-link" style={{ color: '#ffffff', marginLeft: '10px' }} to="/compoverview">Competitie Overzicht</Link>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/clubs">Clubs</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none', marginLeft: '-55px', marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
-                            <Link className="nav-link" style={{ color: '#ffffff', marginLeft: '10px' }} to="/contact">Contact</Link>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/scores">Uitslagen</Link>
+                        </li>
+                    </ul>
+                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
+                        <li className="nav-item" onClick={this.toggleNavbar}>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/compoverview">Competitie Overzicht</Link>
+                        </li>
+                    </ul>
+                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
+                        <li className="nav-item" onClick={this.toggleNavbar}>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/contact">Contact</Link>
                         </li>
                     </ul>
                 </div>
