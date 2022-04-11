@@ -10,7 +10,7 @@ class Footer extends Component {
                 <div class="footer-copyright text-center py-1">© 2020 Copyright:
                     <span> Rolstoelhockey</span>
                 </div>
-                <div id="ads-wrapper" class="hidden-xs hidden-sm"> 
+                <div> 
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6534700259705406"
                     crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
