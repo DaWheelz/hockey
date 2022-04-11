@@ -14,7 +14,7 @@ class Footer extends Component {
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6534700259705406"
                     crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
-                    style="display:block"
+                    style={{display:block}}
                     data-ad-client="ca-pub-6534700259705406"
                     data-ad-slot="4972479679"
                     data-ad-format="auto"
