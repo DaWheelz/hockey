@@ -34,27 +34,27 @@ class Nav extends Component {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <div className={`${classOne}`} id="navbarResponsive">
-                    <ul className="navbar-nav ml-auto">
+                    <ul className='navbar-nav ml-auto'>
                         <li className="nav-item active" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#fffff' }} to="/">Home</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/clubs">Clubs</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/scores">Uitslagen</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/compoverview">Competitie Overzicht</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none', marginLeft: '-52px' ,marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/contact">Contact</Link>
                         </li>
