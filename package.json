@@ -22,6 +22,7 @@
     "moment": "^2.29.2",
     "mongodb-stitch-browser-sdk": "^4.8.0",
     "react": "^16.12.0",
+    "react-adsense": "^0.1.0",
     "react-bones": "^1.0.3",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-cardstack": "^1.1.0",

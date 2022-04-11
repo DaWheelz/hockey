@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import rolstoelhockey_logo from '../../../img/navbar_logo_rolstoelhockey.png'
-import dotenv from 'dotenv'
-
-dotenv.config()
+import AdSense from 'react-adsense';
 
 class Nav extends Component {
     constructor(props) {
@@ -12,7 +10,6 @@ class Nav extends Component {
         this.state = {
             collapsed: true,
             loggedIn: false,
-            role: sessionStorage.getItem('role'),
         };
     }
     toggleNavbar() {
@@ -22,36 +19,7 @@ class Nav extends Component {
     }
 
     componentDidMount() {
-        this.getUser();
     }
-
-     getUser() {
-        const API_URL = "https://rolstoelhockey-backend.herokuapp.com/";
-
-        fetch(API_URL, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-                Authorization: 'Bearer ' + localStorage.getItem('token'),
-            },
-        }).then(res => res.json())
-            .then(result => {
-                if (result.user) {
-                    this.setState({ user: result.user });
-                    this.setState({ loggedIn: true });
-                } else {
-                    localStorage.removeItem('token');
-                }
-            });
-    }
-
-    signOut() {
-        sessionStorage.removeItem('token');
-        sessionStorage.removeItem('role');
-        window.location.reload(true);
-    }
-
     render() {
         const collapsed = this.state.collapsed;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
@@ -64,6 +32,9 @@ class Nav extends Component {
                 <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
+                <AdSense.Google
+                client='ca-pub-6534700259705406'
+                slot='7806394673'/>
                 <div className={`${classOne}`} id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active" onClick={this.toggleNavbar}>
