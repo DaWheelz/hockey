@@ -37,8 +37,41 @@ class MatchByTeam extends Component {
   }
 
   getTeams() {
-    axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/H`).then(response => {
-      this.setState({ teams: response.data });
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/H`)
+    .then(response => {
+        let teamsFromApi = data.map(team => {
+            return { value: team._id, display: team.teamname};
+          });
+      this.setState({ 
+          teams: [
+              {
+                  value: 1,
+                  display: "H", 
+                  style : {
+                    fontWeight: '600',
+                    color: '#ff7b00'
+                  }
+                }
+            ].concat(teamsFromApi)
+        });
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/E`).then(response => {
+        let teamsFromApi = data.map(team => {
+            return { value: team._id, display: team.teamname};
+          });
+      this.setState({ 
+          teams: [
+              {
+                  value: 1,
+                  display: "E", 
+                  style : {
+                    fontWeight: '600',
+                    color: '#ff7b00'
+                  }
+                }
+            ].concat(teamsFromApi)
+        });
+        
+    });
     });
   }
 
@@ -65,13 +98,14 @@ class MatchByTeam extends Component {
         <div className="search-bar">
           <h2 style={{ width: '20%', fontWeight: '600' }}>Zoek wedstrijden team</h2>
           <div style={{ display: 'flex' }}>
-            <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
+            <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedTeam: e.target.value }); }}>
               {this.state.teams.map(team => (
                 <option
-                  key={team._id}
-                  value={team.teamname}
+                  key={team.value}
+                  value={team.value}
+                  style={gameday.style}
                 >
-                  {team.teamname}
+                  {team.display}
                 </option>
               ))}
             </select>
