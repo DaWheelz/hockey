@@ -41,7 +41,7 @@ class MatchByTeam extends Component {
         return response.json();
       }).then(data => {
         let teamsFromApi = data.map(team => {
-            return { value: team._id, display: team.teamname};
+            return { value: team.teamname, display: team.teamname};
           });
       this.setState({ 
           teams: [
@@ -60,7 +60,7 @@ class MatchByTeam extends Component {
           })
             .then(data => {
                 let teamsFromApi = data.map(team => {
-                    return { value: team._id, display: team.teamname};
+                    return { value: team.teamname, display: team.teamname};
                   });
               this.setState({ 
                   teams: [...this.state.teams,
@@ -101,7 +101,7 @@ class MatchByTeam extends Component {
         <div className="search-bar">
           <h2 style={{ width: '20%', fontWeight: '600' }}>Zoek wedstrijden team</h2>
           <div style={{ display: 'flex' }}>
-            <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.display); this.setState({ selectChanged: true, selectedTeam: e.target.display }); }}>
+            <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedTeam: e.target.display }); }}>
               {this.state.teams.map(team => (
                 <option
                   key={team.value}
