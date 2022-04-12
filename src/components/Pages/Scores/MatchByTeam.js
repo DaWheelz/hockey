@@ -70,7 +70,7 @@ class MatchByTeam extends Component {
                 }
             ].concat(teamsFromApi)
         });
-        
+        console.log(teamsFromApi + this.state.teams)
     });
     });
   }
