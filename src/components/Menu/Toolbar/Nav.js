@@ -61,6 +61,11 @@ class Nav extends Component {
                     </ul>
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/matchbyteam">Zoek wedstrijd</Link>
+                        </li>
+                    </ul>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                        <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/compoverview">Competitie Overzicht</Link>
                         </li>
                     </ul>
