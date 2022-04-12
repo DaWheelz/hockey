@@ -68,11 +68,10 @@ class MatchByTeam extends Component {
             <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
               {this.state.teams.map(team => (
                 <option
-                  key={team.value}
-                  value={team.value}
-                  style={team.style}
+                  key={team._id}
+                  value={team.teamname}
                 >
-                  {team.display}
+                  {team.teamname}
                 </option>
               ))}
             </select>
