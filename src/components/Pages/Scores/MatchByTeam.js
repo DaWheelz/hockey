@@ -55,25 +55,26 @@ class MatchByTeam extends Component {
             ].concat(teamsFromApi)
         });
         axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/E`).then(response => {
-        let teamsFromApi = response.data.map(team => {
-            return { value: team._id, display: team.teamname};
-          });
-      this.setState({ 
-          teams: [
-              {
-                  value: 1,
-                  display: "E", 
-                  style : {
-                    fontWeight: '600',
-                    color: '#ff7b00'
-                  }
-                }
-            ].concat(teamsFromApi)
+            return response.json();
+        }).then(data => {
+            let teamsFromApi = data.map(team => {
+                return { value: team._id, display: team.teamname};
+              });
+          this.setState({ 
+              teams: [
+                  {
+                      value: 1,
+                      display: "E", 
+                      style : {
+                        fontWeight: '600',
+                        color: '#ff7b00'
+                      }
+                    }
+                ].concat(teamsFromApi)
+            });
         });
-        console.log(teamsFromApi + this.state.teams)
-    });
-    });
-  }
+        })
+    };
 
   getAcces() {
     this.state.role = sessionStorage.getItem('role');
