@@ -103,7 +103,7 @@ class MatchByTeam extends Component {
                 <option
                   key={team.value}
                   value={team.value}
-                  style={gameday.style}
+                  style={team.style}
                 >
                   {team.display}
                 </option>
