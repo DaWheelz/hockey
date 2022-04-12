@@ -63,7 +63,7 @@ class MatchByTeam extends Component {
                     return { value: team._id, display: team.teamname};
                   });
               this.setState({ 
-                  teams: [
+                  teams: [...this.state.teams,
                       {
                           value: 1,
                           display: "E", 
