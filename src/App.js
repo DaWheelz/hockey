@@ -15,6 +15,7 @@ import RefereeModule from './components/Pages/Referee';
 import EditUserModule from './components/Pages/EditUser';
 import ContactModule from './components/Pages/Contact';
 import MatchModule from './components/Pages/Scores/Match';
+import MatchByTeamModule from './components/Pages/Scores/MatchByTeam';
 import AddScoresModule from './components/Pages/Scores/AddMatch';
 import EditScoresModule from './components/Pages/Scores/EditMatch';
 import AddClubsModule from './components/Pages/Clubs/AddClubs';
@@ -71,6 +72,7 @@ class App extends Component {
               <Route path="/compoverview" component={CompetitionOverviewModule} />
               <Route path="/users" component={UsersModule} />
               <Route path="/scores" component={MatchModule} />
+              <Route path="/match" component={MatchByTeamModule} />
               <Route path="/contact" component={ContactModule} />
               <Route path="/referee" component={RefereeModule} />
               <PrivateRoute path="/addmatch" component={AddScoresModule} />
