@@ -39,7 +39,9 @@ class MatchByTeam extends Component {
   getTeams() {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/H`)
     .then(response => {
-        let teamsFromApi = response.data.map(team => {
+        return response.json();
+      }).then(data => {
+        let teamsFromApi = data.map(team => {
             return { value: team._id, display: team.teamname};
           });
       this.setState({ 
@@ -54,16 +56,18 @@ class MatchByTeam extends Component {
                 }
             ].concat(teamsFromApi)
         });
-        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/E`)
-            .then(response => {
-                let teamsFromApi = response.data.map(team => {
+        axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/E`).then(response => {
+            return response.json();
+          })
+            .then(data => {
+                let teamsFromApi = data.map(team => {
                     return { value: team._id, display: team.teamname};
                   });
               this.setState({ 
                   teams: [
                       {
                           value: 1,
-                          display: "H", 
+                          display: "E", 
                           style : {
                             fontWeight: '600',
                             color: '#ff7b00'
