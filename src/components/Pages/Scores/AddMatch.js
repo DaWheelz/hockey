@@ -186,83 +186,84 @@ class AddMatch extends Component {
     render() {
         return (
             <div className="pageblock" style={{ display: 'flex', justifyContent: 'center' }}>
+                <div class="text-center border border-light p-5" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
                     <p class="h4 mb-4" style={{ fontWeight: '100' }}>Wedstrijd toevoegen</p>
-                    <div className="form-group" >
-                        <label>Team: </label>
-                        <select className="custom-select" value={this.state.teamA} onChange={(e) => { this.onChangeTeamA(e.target.value); }}>
-                        {this.state.teams.map(team => (
-                            <option
-                            key={team.value}
-                            value={team.value}
-                            style={team.style}
-                            >
-                            {team.display}
-                            </option>
-                        ))}
-                        </select>
-                    </div>
-                    <div className="form-group" >
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.scoreA}
-                            onChange={this.onChangeScoreA}>
-                        </input>
-                    </div>
-                    <div className="form-group" >
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.scoreB}
-                            onChange={this.onChangeScoreB}>
-                        </input>
-                    </div>
-                    <div className="form-group" >
-                        <label>Team: </label>
-                        <select className="custom-select" value={this.state.teamB} onChange={(e) => { this.onChangeTeamB(e.target.value); }}>
-                        {this.state.teams.map(team => (
-                            <option
-                            key={team.value}
-                            value={team.value}
-                            style={team.style}
-                            >
-                            {team.display}
-                            </option>
-                        ))}
-                        </select>
-                    </div>
-                    <div className="form-group" style={{ display: 'flex' }}>
-                        {this.state.time_confirmed
-                            ?
-                            <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'green' }} min="09:00" max="18:00" placeholder="Tijd:"></input>
-                            :
-                            <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'red' }} min="09:00" max="18:00" placeholder="Tijd:"></input>
-                        }
-
-                        <button style={{ backgroundColor: bgColors["Button-Color"], color: 'white', border: 'none', borderRadius: '10px', marginLeft: '10px' }} onClick={this.onChangePlayedAt}>OK</button>
-                    </div>
-                    <div className="form-group" >
-                        <label>Competitiedag: </label>
-                        <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.onChangeGameDay(e.target.value); this.setState({ gamedayid: e.target.value }); }}>
-                            {this.state.gamedays.map(gameday => (
+                        <div className="form-group" >
+                            <label>Team: </label>
+                            <select className="custom-select" value={this.state.teamA} onChange={(e) => { this.onChangeTeamA(e.target.value); }}>
+                            {this.state.teams.map(team => (
                                 <option
-                                key={gameday.value}
-                                value={gameday.value}
-                                style={gameday.style}
+                                key={team.value}
+                                value={team.value}
+                                style={team.style}
                                 >
-                                {gameday.display}
+                                {team.display}
                                 </option>
                             ))}
                             </select>
-                    </div>
-                    <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} type="submit">Toevoegen</button>
-                {this.state.succes_message
-                    ?
-                    <div class="alert alert-success" role="alert">
-                        Match added!
-                    </div>
-                    :
-                    null}
-            </div>
+                        </div>
+                        <div className="form-group" >
+                            <input type="text"
+                                className="form-control"
+                                value={this.state.scoreA}
+                                onChange={this.onChangeScoreA}>
+                            </input>
+                        </div>
+                        <div className="form-group" >
+                            <input type="text"
+                                className="form-control"
+                                value={this.state.scoreB}
+                                onChange={this.onChangeScoreB}>
+                            </input>
+                        </div>
+                        <div className="form-group" >
+                            <label>Team: </label>
+                            <select className="custom-select" value={this.state.teamB} onChange={(e) => { this.onChangeTeamB(e.target.value); }}>
+                            {this.state.teams.map(team => (
+                                <option
+                                key={team.value}
+                                value={team.value}
+                                style={team.style}
+                                >
+                                {team.display}
+                                </option>
+                            ))}
+                            </select>
+                        </div>
+                        <div className="form-group" style={{ display: 'flex' }}>
+                            {this.state.time_confirmed
+                                ?
+                                <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'green' }} min="09:00" max="18:00" placeholder="Tijd:"></input>
+                                :
+                                <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'red' }} min="09:00" max="18:00" placeholder="Tijd:"></input>
+                            }
 
+                            <button style={{ backgroundColor: bgColors["Button-Color"], color: 'white', border: 'none', borderRadius: '10px', marginLeft: '10px' }} onClick={this.onChangePlayedAt}>OK</button>
+                        </div>
+                        <div className="form-group" >
+                            <label>Competitiedag: </label>
+                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.onChangeGameDay(e.target.value); this.setState({ gamedayid: e.target.value }); }}>
+                                {this.state.gamedays.map(gameday => (
+                                    <option
+                                    key={gameday.value}
+                                    value={gameday.value}
+                                    style={gameday.style}
+                                    >
+                                    {gameday.display}
+                                    </option>
+                                ))}
+                                </select>
+                        </div>
+                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} type="submit">Toevoegen</button>
+                        {this.state.succes_message
+                            ?
+                            <div class="alert alert-success" role="alert">
+                                Match added!
+                            </div>
+                            :
+                            null}
+                </div>
+                </div>
         )
     }
 }
