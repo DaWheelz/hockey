@@ -133,9 +133,7 @@ class AddMatch extends Component {
         };
 
     onChangeTeamA(e) {
-        this.setState({
-            teamA: e.target.value
-        })
+        
     }
     onChangeTeamB(e) {
         this.setState({
@@ -190,11 +188,11 @@ class AddMatch extends Component {
                     <p class="h4 mb-4" style={{ fontWeight: '100' }}>Wedstrijd toevoegen</p>
                         <div className="form-group" >
                             <label>Team: </label>
-                            <select className="custom-select" value={this.state.teamA} onChange={(e) => { this.onChangeTeamA(e.target.value); }}>
+                            <select className="custom-select" value={this.state.teamA} onChange={(e) => { this.setState({teamA: e.target.value }) }}>
                             {this.state.teams.map(team => (
                                 <option
-                                key={team.value}
-                                value={team.value}
+                                key={team._id}
+                                value={team._id}
                                 style={team.style}
                                 >
                                 {team.display}
@@ -221,8 +219,8 @@ class AddMatch extends Component {
                             <select className="custom-select" value={this.state.teamB} onChange={(e) => { this.onChangeTeamB(e.target.value); }}>
                             {this.state.teams.map(team => (
                                 <option
-                                key={team.value}
-                                value={team.value}
+                                key={team._id}
+                                value={team._id}
                                 style={team.style}
                                 >
                                 {team.display}
