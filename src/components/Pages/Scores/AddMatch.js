@@ -87,6 +87,7 @@ class AddMatch extends Component {
             });
           })
           });
+          console.log(JSON.stringify(this.state.teams));
       } 
 
     getTeams() {
