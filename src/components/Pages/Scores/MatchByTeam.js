@@ -32,7 +32,7 @@ class MatchByTeam extends Component {
 
   getMatches(team) {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findmatchByTeam/` + team).then(response => {
-      console.log("response: " + response);
+      console.log("response: " + response.data);
       this.setState({ matches: response.data });
     });
   }
@@ -87,6 +87,7 @@ class MatchByTeam extends Component {
     const matchItems = this.state.matches.map((match, _id) => {
         return (
           <div className="subtitle">
+            DATE GOES HERE!
             <div className="match-group">
               <div className="match-time">{match.played_at}</div>
               <div className="match-teama">{match.teamA}</div>
