@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "./addmatch.css";
 import axios from 'axios';
-import ImporterAPI from '../Scores/GetGameDaysAPI';
 import '../../admin.css'
 
 var bgColors = {
@@ -39,8 +38,8 @@ class AddMatch extends Component {
     }
 
     componentDidMount() {
-        //this.getTeams();
-        //this.getGameDays();
+        this.getTeams();
+        this.getGameDays();
     }
 
     getGameDays() {
