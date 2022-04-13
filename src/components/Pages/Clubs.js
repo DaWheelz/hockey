@@ -38,7 +38,7 @@ class Club extends Component {
         });
         return (
             <div className="pageblock" style={{border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)'}}>
-                <h1 style={{ color: textColor, fontWeight: '600' }}>Clubs</h1>
+                <h4 style={{ color: textColor, fontWeight: '600' }}>Clubs</h4>
                 <div className="clubheader">
                     <h4 className="clubnameheader">Naam</h4>
                     <h4 className="clubaddressheader">Adres</h4>

@@ -157,7 +157,7 @@ class Home extends Component {
       <div className="pageblock">
         <div className="home-div1">
           <div className="home-matches">
-            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Laatste uitslagen - H</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - H</h1>
             {this.state.loading && (
                   <div>
                     <Skeleton style={{margin:"0.5rem"}} height={39} count={20}></Skeleton>
@@ -166,7 +166,7 @@ class Home extends Component {
             {matchItemsH}
           </div>
           <div className="home-matches">
-            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Laatste uitslagen - E</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - E</h1>
             {this.state.loading && (
                   <div>
                     <Skeleton style={{margin:"0.5rem"}} height={39} count={20}></Skeleton>
@@ -177,7 +177,7 @@ class Home extends Component {
         </div>
         <div className="home-div1">
         <div className="home-events">
-            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Competitedagen - H</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Competitedagen - H</h1>
             {this.state.loading && (
                   <div>
                     <Skeleton style={{margin:"0.5rem"}} height={39} count={20}></Skeleton>
@@ -186,7 +186,7 @@ class Home extends Component {
               {eventItemsH}
           </div>
           <div className="home-events">
-            <h1 style={{ fontWeight: '600', fontSize: 35, margin: 7}}>Competitedagen - E</h1>
+            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Competitedagen - E</h1>
             {this.state.loading && (
                   <div>
                     <Skeleton style={{margin:"0.5rem"}} height={39} count={20}></Skeleton>

@@ -119,7 +119,7 @@ class Match extends Component {
     return (
       <div style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
         <div className="search-bar">
-          <h2 style={{ width: '20%', fontWeight: '600' }}>Alle wedstrijden</h2>
+          <h4 style={{ width: '20%', fontWeight: '600' }}>Alle wedstrijden</h4>
           <div style={{ display: 'flex' }}>
             <select className="custom-select" value={this.state.selectedGameDay} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
               {this.state.gamedays.map(gameday => (
