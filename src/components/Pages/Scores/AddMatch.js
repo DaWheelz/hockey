@@ -9,6 +9,8 @@ var bgColors = {
     "Button-Color": "#ef790c"
 };
 
+const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+
 class AddMatch extends Component {
 
     constructor(props) {
