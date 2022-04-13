@@ -29,7 +29,7 @@ class AddMatch extends Component {
             scoreB: 0,
             teamB: '',
             teams: [],
-            data: [],
+            gamedays: [],
             gamedayid: 0,
             played_at: '',
             time_confirmed: false,
@@ -52,7 +52,7 @@ class AddMatch extends Component {
               return { value: gameday._id, display: gameday.title + " " + game_date};
             });
             this.setState({
-              data: [
+              gamedays: [
                 {
                   value: 1,
                   display:
@@ -73,7 +73,7 @@ class AddMatch extends Component {
               return { value: gameday._id, display: gameday.title + " " + game_date };
             });
             this.setState({
-              data: [ ...this.state.data,
+              gamedays: [ ...this.state.gamedays,
                 {
                   value: 2,
                   display:
@@ -185,25 +185,19 @@ class AddMatch extends Component {
     render() {
         return (
             <div className="pageblock" style={{ display: 'flex', justifyContent: 'center' }}>
-                <form onSubmit={this.onSubmit} class="text-center border border-light p-5" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
-
                     <p class="h4 mb-4" style={{ fontWeight: '100' }}>Wedstrijd toevoegen</p>
-
                     <div className="form-group" >
                         <label>Team: </label>
-                        <select ref="teamaInput"
-                            required
-                            className="form-control"
-                            value={this.state.teamA}
-                            onChange={this.onChangeTeamA}>
-                            {
-                                this.state.teams.map(function (team) {
-                                    return <option
-                                        key={team}
-                                        value={team._id}>{team.teamname}
-                                    </option>;
-                                })
-                            }
+                        <select className="custom-select" value={this.state.teamA} onChange={(e) => { this.onChangeTeamA(e.target.value); }}>
+                        {this.state.teams.map(team => (
+                            <option
+                            key={team.value}
+                            value={team.value}
+                            style={team.style}
+                            >
+                            {team.display}
+                            </option>
+                        ))}
                         </select>
                     </div>
                     <div className="form-group" >
@@ -222,19 +216,16 @@ class AddMatch extends Component {
                     </div>
                     <div className="form-group" >
                         <label>Team: </label>
-                        <select ref="teambInput"
-                            required
-                            className="form-control"
-                            value={this.state.teamB}
-                            onChange={this.onChangeTeamB}>
-                            {
-                                this.state.teams.map(function (team) {
-                                    return <option
-                                        key={team}
-                                        value={team._id}>{team.teamname}
-                                    </option>;
-                                })
-                            }
+                        <select className="custom-select" value={this.state.teamB} onChange={(e) => { this.onChangeTeamB(e.target.value); }}>
+                        {this.state.teams.map(team => (
+                            <option
+                            key={team.value}
+                            value={team.value}
+                            style={team.style}
+                            >
+                            {team.display}
+                            </option>
+                        ))}
                         </select>
                     </div>
                     <div className="form-group" style={{ display: 'flex' }}>
@@ -249,25 +240,19 @@ class AddMatch extends Component {
                     </div>
                     <div className="form-group" >
                         <label>Competitiedag: </label>
-                        <select ref="GameDayInput"
-                            required
-                            className="form-control"
-                            placeholder="Selecteer een dag"
-                            value={this.state.data.gamedayid}
-                            onChange={this.onChangeGameDay}>
-                            {
-                                this.state.data.map(function (data) {
-                                    return <option
-                                        key={data.gamedayid}
-                                        value={data.gamedayid}>{data.gamedate}
-                                    </option>;
-                                })
-
-                            }
-                        </select>
+                        <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.onChangeGameDay(e.target.value); this.setState({ gamedayid: e.target.value }); }}>
+                            {this.state.gamedays.map(gameday => (
+                                <option
+                                key={gameday.value}
+                                value={gameday.value}
+                                style={gameday.style}
+                                >
+                                {gameday.display}
+                                </option>
+                            ))}
+                            </select>
                     </div>
                     <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} type="submit">Toevoegen</button>
-                </form>
                 {this.state.succes_message
                     ?
                     <div class="alert alert-success" role="alert">
