@@ -4,8 +4,6 @@ import axios from 'axios';
 import ImporterAPI from '../Scores/GetGameDaysAPI';
 import '../../admin.css'
 
-const API = new ImporterAPI()
-
 var bgColors = {
     "Default": "#81b71a",
     "Button-Color": "#ef790c"
@@ -39,22 +37,98 @@ class AddMatch extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://rolstoelhockey-backend.herokuapp.com/clubs/team')
-            .then(response => {
-                if (response.data.length > 0) {
-                    this.setState({
-                        teams: response.data.map(team => team.teamname),
-                        teamA: response.data[0].teamname,
-                        teamB: response.data[0].teamname
-                    })
-                }
-            })
-        API.getData().then(response => {
-            var exvalue = [{ title: 'Selecteer een dag' }]
-            var joined = exvalue.concat(response);
-            this.setState({ data: joined })
-        })
+        this.getTeams();
+        this.getGameDays();
     }
+
+    getGameDays() {
+        fetch("https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H").then(response => {
+          return response.json();
+        })
+          .then(data => {
+            let gamedaysFromApi = data.map(gameday => {
+              let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
+              return { value: gameday._id, display: gameday.title + " " + game_date};
+            });
+            this.setState({
+              data: [
+                {
+                  value: 1,
+                  display:
+                    "H-Hockey",
+                  style : {
+                    fontWeight: '600',
+                    color: '#ff7b00'
+                  }
+                }
+              ].concat(gamedaysFromApi)
+            });
+            fetch("https://rolstoelhockey-backend.herokuapp.com/gamedays/get/E").then(response => {
+          return response.json();
+          })
+          .then(data => {
+            let gamedaysFromApi = data.map(gameday => {
+              let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
+              return { value: gameday._id, display: gameday.title + " " + game_date };
+            });
+            this.setState({
+              data: [ ...this.state.data,
+                {
+                  value: 2,
+                  display:
+                    "E-Hockey",
+                  style : {
+                    fontWeight: '600',
+                    color: '#ff7b00'
+                  }
+                }
+              ].concat(gamedaysFromApi)
+            });
+          })
+          });
+      } 
+
+    getTeams() {
+        fetch(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/H`).then(response => {
+            return response.json();
+          }).then(data => {
+            let teamsFromApi = data.map(team => {
+                return { value: team._id, display: team.teamname};
+              });
+          this.setState({ 
+              teams: [
+                  {
+                      value: 1,
+                      display: "--H-Hockey--", 
+                      style : {
+                        fontWeight: '600',
+                        color: '#ff7b00'
+                      }
+                    }
+                ].concat(teamsFromApi)
+            });
+            fetch(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/E`).then(response => {
+                return response.json();
+              })
+                .then(data => {
+                    let teamsFromApi = data.map(team => {
+                        return { value: team._id, display: team.teamname};
+                      });
+                  this.setState({ 
+                      teams: [...this.state.teams,
+                          {
+                              value: 1,
+                              display: "--E-Hockey--", 
+                              style : {
+                                fontWeight: '600',
+                                color: '#ff7b00'
+                              }
+                            }
+                        ].concat(teamsFromApi)
+                    });
+            });
+            })
+        };
 
     onChangeTeamA(e) {
         this.setState({
