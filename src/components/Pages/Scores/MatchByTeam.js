@@ -9,7 +9,7 @@ var bgColors = {
   "Button-Color": "#ef790c"
 };
 
-const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
 class MatchByTeam extends Component {
   constructor() {
@@ -84,10 +84,10 @@ class MatchByTeam extends Component {
 
   render() {
     const matchItems = this.state.matches.map((match, _id) => {
+    let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2);
         return (
-          <div className="subtitle">
-            DATE GOES HERE! {match.gameday_info}
             <div className="match-group">
+              <div className="match-date">{game_date}</div>
               <div className="match-time">{match.played_at}</div>
               <div className="match-teama">{match.teamA}</div>
               <div className="match-score">{match.scoreA}</div>
@@ -95,7 +95,6 @@ class MatchByTeam extends Component {
               <div className="match-score">{match.scoreB}</div>
               <div className="match-teamb">{match.teamB}</div>
             </div>
-          </div>
         );
       });
 
