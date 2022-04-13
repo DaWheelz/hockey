@@ -32,7 +32,7 @@ class MatchByTeam extends Component {
 
   getMatches(team) {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findmatchByTeam/` + team).then(response => {
-      console.log("response: " + response.data);
+      console.log("response: " + response.data.gameday_info);
       this.setState({ matches: response.data });
       console.log("state: " + this.state.matches);
     });
