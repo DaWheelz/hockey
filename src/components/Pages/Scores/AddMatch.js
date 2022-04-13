@@ -166,15 +166,6 @@ class AddMatch extends Component {
         console.log("time: " + this.state.played_at)
     }
 
-    onShowAlert = () => {
-        this.setState({ succes_message: true }, () => {
-            window.setTimeout(() => {
-                this.setState({ succes_message: false })
-                window.history.go(-1);
-            }, 2000)
-        });
-    }
-
     onSubmit(e) {
         e.preventDefault();
 
@@ -257,7 +248,7 @@ class AddMatch extends Component {
 
                         <button style={{ backgroundColor: bgColors["Button-Color"], color: 'white', border: 'none', borderRadius: '10px', marginLeft: '10px' }} onClick={this.onChangePlayedAt}>OK</button>
                     </div>
-                    <div className="form-group" >
+                    {/* <div className="form-group" >
                         <label>Competitiedag: </label>
                         <select ref="GameDayInput"
                             required
@@ -275,7 +266,7 @@ class AddMatch extends Component {
 
                             }
                         </select>
-                    </div>
+                    </div> */}
                     <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} type="submit">Toevoegen</button>
                 </form>
                 {this.state.succes_message
