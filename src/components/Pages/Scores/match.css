@@ -7,6 +7,9 @@
     color: rgb(46, 46, 46);
     border-bottom: 1px solid grey;
 }
+.subtitle {
+    
+}
 .clubheader{
     display: flex;
 }
