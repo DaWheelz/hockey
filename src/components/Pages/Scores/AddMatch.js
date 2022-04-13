@@ -37,7 +37,7 @@ class AddMatch extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.getTeams();
         this.getGameDays();
     }
