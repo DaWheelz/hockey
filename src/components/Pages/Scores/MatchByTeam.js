@@ -101,7 +101,7 @@ class MatchByTeam extends Component {
     return (
       <div style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
         <div className="search-bar">
-          <h2 style={{ width: '20%', fontWeight: '600' }}>Zoek wedstrijden per team</h2>
+          <h2 style={{ width: '50%', fontWeight: '600' }}>Zoek wedstrijden per team</h2>
           <div style={{ display: 'flex' }}>
             <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedTeam: e.target.display }); }}>
               {this.state.teams.map(team => (
