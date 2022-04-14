@@ -59,11 +59,15 @@ class Nav extends Component {
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/scores">Uitslagen</Link>
                         </li>
                     </ul>
+                    {this.state.loggedIn ?
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/addmatch">Wedstrijd toevoegen</Link>
                         </li>
                     </ul>
+                    :
+                    <div></div>
+                    }
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/match">Zoek wedstrijd</Link>
