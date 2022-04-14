@@ -239,7 +239,7 @@ class AddMatch extends Component {
                                     <option
                                     key={gameday.value}
                                     value={gameday.value}
-                                    competition={gameday.competitionid}
+                                    competition={gameday.competition}
                                     style={gameday.style}
                                     >
                                     {gameday.competition}
