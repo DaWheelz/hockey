@@ -153,7 +153,8 @@ class AddMatch extends Component {
         console.log("time: " + this.state.played_at)
     }
 
-    onSubmit() {
+    onSubmit(e) {
+        e.preventDefault();
         const match = {
             teamA: this.state.teamA,
             teamB: this.state.teamB,
@@ -240,7 +241,7 @@ class AddMatch extends Component {
                                 ))}
                                 </select>
                         </div>
-                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} onClick={this.onSubmit(this)}>Toevoegen</button>
+                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} onClick={this.onSubmit}>Toevoegen</button>
                         {this.state.succes_message
                             ?
                             <div class="alert alert-success" role="alert">
