@@ -164,10 +164,9 @@ class AddMatch extends Component {
             played_at: this.state.played_at,
         }
 
-        console.log("sending match details: " + {match})
-
         axios.post('https://rolstoelhockey-backend.herokuapp.com/matches/add', match)
-            .then(res => this.setState({succes_message: true}));
+            .then(res => {this.setState({succes_message: true})
+        console.log(res)});
     }
 
     render() {
