@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./addmatch.css";
 import axios from 'axios';
 import '../../admin.css'
-import { ThreeDRotationSharp, TurnedInSharp } from '@material-ui/icons';
+import { CollectionsOutlined, ThreeDRotationSharp, TurnedInSharp } from '@material-ui/icons';
 
 var bgColors = {
     "Default": "#81b71a",
@@ -40,6 +40,7 @@ class AddMatch extends Component {
     componentWillMount() {
         this.getTeams();
         this.getGameDays();
+        console.log('loaded gamedays? ' + this.state.gamedays);
     }
 
     getGameDays() {
@@ -89,7 +90,6 @@ class AddMatch extends Component {
             });
           })
           });
-          console.log('gamedays loaded: ' + this.state.gamedays);
       } 
 
     getTeams() {
@@ -233,12 +233,12 @@ class AddMatch extends Component {
                         </div>
                         <div className="form-group" >
                             <label>Competitiedag: </label>
-                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competitionid: e.target.competition }); console.log('select competition: ' + e.target.competition) }}>
+                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competitionid: e.target.competition }); console.log('select competition: ' + this.state.competitionid) }}>
                                 {this.state.gamedays.map(gameday => (
                                     <option
                                     key={gameday.value}
-                                    competition={gameday.competitionid}
                                     value={gameday.value}
+                                    competition={gameday.competitionid}
                                     style={gameday.style}
                                     >
                                     {gameday.display}
