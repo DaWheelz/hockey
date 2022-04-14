@@ -89,7 +89,7 @@ class Nav extends Component {
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">
-                                <img src={login_icon} alt=""></img>
+                                <img src={login_icon} alt="" style={{height: '25px'}}></img>
                             </Link>
                         </li>
                     </ul>
