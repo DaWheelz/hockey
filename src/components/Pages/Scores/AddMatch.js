@@ -219,9 +219,9 @@ class AddMatch extends Component {
                         <div className="form-group" style={{ display: 'flex' }}>
                             {this.state.time_confirmed
                                 ?
-                                <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'green' }} step="15" min="09:00" max="18:00" placeholder="Tijd:"></input>
+                                <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'green' }} min="09:00" max="18:00" placeholder="Tijd:"></input>
                                 :
-                                <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'red' }} step="15" min="09:00" max="18:00" placeholder="Tijd:"></input>
+                                <input type="time" className="form-control" onChange={e => { this.setState({ played_at: e.target.value }) }} id="timepicker" style={{ width: '200px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'red' }} min="09:00" max="18:00" placeholder="Tijd:"></input>
                             }
 
                             <button style={{ backgroundColor: bgColors["Button-Color"], color: 'white', border: 'none', borderRadius: '10px', marginLeft: '10px' }} onClick={this.onChangePlayedAt}>OK</button>
