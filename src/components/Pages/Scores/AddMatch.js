@@ -251,7 +251,7 @@ class AddMatch extends Component {
                         {this.state.succes_message
                             ?
                             <div class="alert alert-success" role="alert">
-                                Match added!
+                                Match added
                             </div>
                             :
                             null}
