@@ -89,6 +89,7 @@ class AddMatch extends Component {
             });
           })
           });
+          console.log('gamedays loaded: ' + this.state.gamedays);
       } 
 
     getTeams() {
