@@ -55,8 +55,7 @@ class AddMatch extends Component {
             this.setState({
               gamedays: [
                 {
-                  value: 1,
-                  competition: 'H',
+                  value: [1, "H"],
                   display:
                     "H-Hockey",
                   style : {
@@ -77,8 +76,7 @@ class AddMatch extends Component {
             this.setState({
               gamedays: [ ...this.state.gamedays,
                 {
-                  value: 2,
-                  competition: 'E',
+                  value: [2, "E"],
                   display:
                     "E-Hockey",
                   style : {
@@ -234,12 +232,11 @@ class AddMatch extends Component {
                         </div>
                         <div className="form-group" >
                             <label>Competitiedag: </label>
-                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competition: e.target.competition }); console.log('selected comp: ' + e.target.competition)}}>
+                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value[0], competition: e.target.value[1] });}}>
                                 {this.state.gamedays.map(gameday => (
                                     <option
                                     key={gameday.value}
                                     value={gameday.value}
-                                    competition={gameday.competition}
                                     style={gameday.style}
                                     >
                                     {gameday.display}
