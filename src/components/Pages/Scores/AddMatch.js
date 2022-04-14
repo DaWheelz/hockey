@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./addmatch.css";
 import axios from 'axios';
 import '../../admin.css'
-import { TurnedInSharp } from '@material-ui/icons';
+import { ThreeDRotationSharp, TurnedInSharp } from '@material-ui/icons';
 
 var bgColors = {
     "Default": "#81b71a",
@@ -29,6 +29,7 @@ class AddMatch extends Component {
             teams: [],
             gamedays: [],
             gamedayid: 0,
+            competitionid: '',
             played_at: '',
             time_confirmed: false,
             succes_message: false,
@@ -54,6 +55,7 @@ class AddMatch extends Component {
               gamedays: [
                 {
                   value: 1,
+                  competition: 'H',
                   display:
                     "H-Hockey",
                   style : {
@@ -75,6 +77,7 @@ class AddMatch extends Component {
               gamedays: [ ...this.state.gamedays,
                 {
                   value: 2,
+                  competition: 'E',
                   display:
                     "E-Hockey",
                   style : {
@@ -161,6 +164,7 @@ class AddMatch extends Component {
             scoreA: this.state.scoreA,
             scoreB: this.state.scoreB,
             gamedayid: this.state.gamedayid,
+            competitionid: this.state.competitionidL,
             played_at: this.state.played_at,
         }
 
@@ -228,10 +232,11 @@ class AddMatch extends Component {
                         </div>
                         <div className="form-group" >
                             <label>Competitiedag: </label>
-                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value }); }}>
+                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competitionid: e.target.competition }); }}>
                                 {this.state.gamedays.map(gameday => (
                                     <option
                                     key={gameday.value}
+                                    competition={gameday.competitionid}
                                     value={gameday.value}
                                     style={gameday.style}
                                     >
