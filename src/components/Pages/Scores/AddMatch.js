@@ -152,9 +152,7 @@ class AddMatch extends Component {
         console.log("time: " + this.state.played_at)
     }
 
-    onSubmit(e) {
-        e.preventDefault();
-
+    onSubmit() {
         const match = {
             teamA: this.state.teamA,
             teamB: this.state.teamB,
@@ -165,7 +163,7 @@ class AddMatch extends Component {
         }
 
         axios.post('https://rolstoelhockey-backend.herokuapp.com/matches/add', match)
-            .then(res => this.onShowAlert());
+            .then(res => console.log('match added' + {match}));
 
     }
 
@@ -240,7 +238,7 @@ class AddMatch extends Component {
                                 ))}
                                 </select>
                         </div>
-                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} type="submit">Toevoegen</button>
+                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} type="submit" onClick={this.onSubmit()}>Toevoegen</button>
                         {this.state.succes_message
                             ?
                             <div class="alert alert-success" role="alert">
