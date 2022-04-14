@@ -49,7 +49,7 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid};
+              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competition};
             }
             );
             this.setState({
@@ -72,7 +72,7 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid };
+              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competition };
             });
             this.setState({
               gamedays: [ ...this.state.gamedays,
@@ -166,7 +166,7 @@ class AddMatch extends Component {
             scoreA: this.state.scoreA,
             scoreB: this.state.scoreB,
             gamedayid: this.state.gamedayid,
-            competitionid: this.state.competitionid,
+            competition: this.state.competition,
             played_at: this.state.played_at,
         }
 
@@ -234,12 +234,12 @@ class AddMatch extends Component {
                         </div>
                         <div className="form-group" >
                             <label>Competitiedag: </label>
-                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competitionid: e.target.competition }); console.log('select competition: ' + e.target.competition) }}>
+                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competition: e.target.competition }); }}>
                                 {this.state.gamedays.map(gameday => (
                                     <option
                                     key={gameday.value}
                                     value={gameday.value}
-                                    competition={gameday.competitionid}
+                                    competition={gameday.competition}
                                     style={gameday.style}
                                     >
                                     {gameday.competitionid}
