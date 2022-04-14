@@ -49,7 +49,7 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competition};
+              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid};
             }
             );
             this.setState({
@@ -72,7 +72,7 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competition };
+              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid };
             });
             this.setState({
               gamedays: [ ...this.state.gamedays,
@@ -239,7 +239,7 @@ class AddMatch extends Component {
                                     <option
                                     key={gameday.value}
                                     value={gameday.value}
-                                    competition={gameday.competition}
+                                    competition={gameday.competitionid}
                                     style={gameday.style}
                                     >
                                     {gameday.competitionid}
