@@ -83,7 +83,6 @@ class AddMatch extends Component {
             });
           })
           });
-          console.log(JSON.stringify(this.state.teams));
       } 
 
     getTeams() {
@@ -161,6 +160,8 @@ class AddMatch extends Component {
             gamedayid: this.state.gamedayid,
             played_at: this.state.played_at,
         }
+
+        console.log("sending match details: " + {match})
 
         axios.post('https://rolstoelhockey-backend.herokuapp.com/matches/add', match)
             .then(res => this.setState({succes_message: true}));
