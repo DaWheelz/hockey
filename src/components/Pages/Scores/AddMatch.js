@@ -40,7 +40,6 @@ class AddMatch extends Component {
     componentWillMount() {
         this.getTeams();
         this.getGameDays();
-        console.log('loaded gamedays? ' + this.state.gamedays);
     }
 
     getGameDays() {
@@ -50,7 +49,7 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              return { value: gameday._id, display: gameday.title + " " + game_date};
+              return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid};
             });
             this.setState({
               gamedays: [
