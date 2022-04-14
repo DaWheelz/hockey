@@ -49,18 +49,18 @@ class Nav extends Component {
                             <Link className="nav-link" style={{ color: '#fffff' }} to="/">Home</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/clubs">Clubs</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/scores">Uitslagen</Link>
                         </li>
                     </ul>
                     {this.state.loggedIn ?
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/addmatch">Wedstrijd toevoegen</Link>
                         </li>
@@ -68,29 +68,29 @@ class Nav extends Component {
                     :
                     <div></div>
                     }
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/match">Zoek wedstrijd</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/compoverview">Competitie Overzicht</Link>
                         </li>
                     </ul>
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/contact">Contact</Link>
                         </li>
                     </ul>
                     {this.state.loggedIn ?
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/">Logged in as: Admin</Link>
                         </li>
                     </ul>
                     :
-                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">
                                 <img src={login_icon} alt="" style={{height: '25px'}}></img>

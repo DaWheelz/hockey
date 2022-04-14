@@ -2,7 +2,7 @@
 @media (max-width: 768px){
     .toolbar__logo {
         margin-left: 1%;
-        width: 68%;
+        width: 100px;
     }
     .toolbar_login {
         margin-left: 2%;
@@ -16,7 +16,7 @@
 @media (min-width: 769px){
     .toolbar__logo {
         margin-left: 1%;
-        width: 35%;
+        width: 100px;
     }
     .toolbar_login {
         margin-left: 2%;
