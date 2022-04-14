@@ -232,7 +232,7 @@ class AddMatch extends Component {
                         </div>
                         <div className="form-group" >
                             <label>Competitiedag: </label>
-                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competitionid: e.target.competition }); console.log('select competition: ' + e.target) }}>
+                            <select className="custom-select" value={this.state.gamedayid} onChange={(e) => { this.setState({ gamedayid: e.target.value, competitionid: e.target.competition }); console.log('select competition: ' + e.target.competition) }}>
                                 {this.state.gamedays.map(gameday => (
                                     <option
                                     key={gameday.value}
