@@ -240,7 +240,7 @@ class AddMatch extends Component {
                                 ))}
                                 </select>
                         </div>
-                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} onClick={this.onSubmit}>Toevoegen</button>
+                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} onClick={this.onSubmit(this)}>Toevoegen</button>
                         {this.state.succes_message
                             ?
                             <div class="alert alert-success" role="alert">
