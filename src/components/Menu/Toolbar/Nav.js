@@ -1,7 +1,7 @@
-import { TransferWithinAStationOutlined } from '@material-ui/icons';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import rolstoelhockey_logo from '../../../img/navbar_logo_rolstoelhockey.png'
+import login_icon from '../../../img/login_icon.png'
 
 
 class Nav extends Component {
@@ -61,6 +61,11 @@ class Nav extends Component {
                     </ul>
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/addmatch">Wedstrijd toevoegen</Link>
+                        </li>
+                    </ul>
+                    <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
+                        <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/match">Zoek wedstrijd</Link>
                         </li>
                     </ul>
@@ -77,13 +82,15 @@ class Nav extends Component {
                     {this.state.loggedIn ?
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
-                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/">Welcome!</Link>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/">Logged in as: Admin</Link>
                         </li>
                     </ul>
                     :
                     <ul style={{ listStyleType: 'none',marginBottom: '0px' }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
-                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">Login</Link>
+                            <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">
+                                <img src={login_icon} alt=""></img>
+                            </Link>
                         </li>
                     </ul>
                     }

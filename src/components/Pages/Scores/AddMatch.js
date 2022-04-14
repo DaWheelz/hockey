@@ -14,9 +14,6 @@ class AddMatch extends Component {
 
     constructor(props) {
         super(props);
-
-        this.onChangeTeamA = this.onChangeTeamA.bind(this);
-        this.onChangeTeamB = this.onChangeTeamB.bind(this);
         this.onChangeScoreA = this.onChangeScoreA.bind(this);
         this.onChangeScoreB = this.onChangeScoreB.bind(this);
         this.onChangeGameDay = this.onChangeGameDay.bind(this);
@@ -207,7 +204,7 @@ class AddMatch extends Component {
                         </div>
                         <div className="form-group" >
                             <label>Team: </label>
-                            <select className="custom-select" value={this.state.teamB} onChange={(e) => { this.setState({teamA: e.target.value }) }}>
+                            <select className="custom-select" value={this.state.teamB} onChange={(e) => { this.setState({teamB: e.target.value }) }}>
                             {this.state.teams.map(team => (
                                 <option
                                 key={team._id}
