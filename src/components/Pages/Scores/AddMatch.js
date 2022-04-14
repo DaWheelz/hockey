@@ -164,7 +164,7 @@ class AddMatch extends Component {
             scoreA: this.state.scoreA,
             scoreB: this.state.scoreB,
             gamedayid: this.state.gamedayid,
-            competitionid: this.state.competitionidL,
+            competitionid: this.state.competitionid,
             played_at: this.state.played_at,
         }
 
