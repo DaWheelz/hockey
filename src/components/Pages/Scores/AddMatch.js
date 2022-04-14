@@ -49,9 +49,10 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              console.log("gameday object: " + JSON.stringify(gameday))
+              
               return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid};
-            });
+            }
+            );
             this.setState({
               gamedays: [
                 {
@@ -90,6 +91,7 @@ class AddMatch extends Component {
               ].concat(gamedaysFromApi)
             });
           })
+          console.log(JSON.stringify(gamedaysFromApi));
           });
       } 
 
