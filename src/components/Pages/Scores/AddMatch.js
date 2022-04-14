@@ -19,6 +19,7 @@ class AddMatch extends Component {
         this.onChangeScoreB = this.onChangeScoreB.bind(this);
         this.onChangeGameDay = this.onChangeGameDay.bind(this);
         this.onChangePlayedAt = this.onChangePlayedAt.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             teamA: '',
@@ -153,7 +154,6 @@ class AddMatch extends Component {
     }
 
     onSubmit() {
-
         const match = {
             teamA: this.state.teamA,
             teamB: this.state.teamB,
