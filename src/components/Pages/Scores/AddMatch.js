@@ -29,7 +29,7 @@ class AddMatch extends Component {
             teams: [],
             gamedays: [],
             gamedayid: 0,
-            competitionid: '',
+            competition: '',
             played_at: '',
             time_confirmed: false,
             succes_message: false,
@@ -49,7 +49,6 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              
               return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid};
             }
             );
@@ -73,7 +72,6 @@ class AddMatch extends Component {
           .then(data => {
             let gamedaysFromApi = data.map(gameday => {
               let game_date = new Date(gameday.gamedate).toLocaleDateString('nl-NL', options);
-              console.log("gameday object: " + JSON.stringify(gameday))
               return { value: gameday._id, display: gameday.title + " " + game_date, competition: gameday.competitionid };
             });
             this.setState({
