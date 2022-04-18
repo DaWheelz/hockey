@@ -5,6 +5,7 @@ import googlemaps_ico from '../../img/google_maps.png';
 import Moment from 'moment';
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
+import GoogleAd from '../../components/GoogleAd';
 
 var textColor = "#4a4a4a";
 var title_event_color = "#fc941c";
@@ -195,6 +196,7 @@ class Home extends Component {
               {eventItemsE}
           </div>
         </div>
+        <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
       </div>
     )
   }
