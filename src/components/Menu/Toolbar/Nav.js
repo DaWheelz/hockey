@@ -38,7 +38,7 @@ class Nav extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: 'rgb(255, 125, 0)', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }} >
                 <Link to="/">
-                    <img src={rolstoelhockey_logo} alt="" className="toolbar__logo"></img>
+                    <img src={rolstoelhockey_logo} alt="" width={100} height={28} className="toolbar__logo"></img>
                 </Link>
                 <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
@@ -93,7 +93,7 @@ class Nav extends Component {
                     <ul style={{ listStyleType: 'none',marginBottom: '0px', marginLeft: '-20px'  }}>
                         <li className="nav-item" onClick={this.toggleNavbar}>
                             <Link className="nav-link" style={{ color: '#ffffff' }} to="/login">
-                                <img src={login_icon} alt="" style={{height: '25px'}}></img>
+                                <img src={login_icon} alt="" height={25} width={25}></img>
                             </Link>
                         </li>
                     </ul>
