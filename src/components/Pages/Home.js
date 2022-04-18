@@ -6,6 +6,7 @@ import Moment from 'moment';
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import GoogleAd from '../../components/GoogleAd';
+import {Helmet} from 'react-helmet'
 
 var textColor = "#4a4a4a";
 var title_event_color = "#fc941c";
@@ -156,6 +157,10 @@ class Home extends Component {
 
     return (
       <div className="pageblock">
+        <Helmet>
+          <title>De officiele Rolstoelhockey app</title>
+          <meta name="description" content="Dit is de officiele Rolstoelhockey app voor de H en E hockey competitie in Nederland!" />
+        </Helmet>
         <div className="home-div1">
           <div className="home-matches">
             <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - H</h1>
